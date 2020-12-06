@@ -139,3 +139,22 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 - Internally it creates a class name specifically for the component its applied
 - **Always** use Camel case
   - eg. `nav-list` in `.css` will become `anyName.navList` in `.js`
+
+## Graphql
+
+- Graphql server availble by dfault at `localhost:8000/__graphql`
+- Only availbale in development mode
+- Allows querying of data
+- Queries can be later moved to react app
+- Docs can be found at top right corner of graphql server
+- A simple query
+
+```graphql
+query {
+  site {
+    siteMetadata {
+      title
+    }
+  }
+}
+```
