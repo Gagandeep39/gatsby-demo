@@ -122,7 +122,9 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 - Visit the [link](https://www.gatsbyjs.com/plugins/) for more info
 - Plugins used in project
-  - `gatsby-plugin-sass`
+  - `gatsby-plugin-sass` Add sass support
+  - `gatsby-source-filesystem` Add reading data from filesystem, Docs [link](https://www.gatsbyjs.com/plugins/gatsby-source-filesystem/)
+  - `gatsby-transformer-remark` Used to interpret Markdown using Remark
 
 ## CSS
 
@@ -158,3 +160,41 @@ query {
   }
 }
 ```
+
+## Graphql Playground
+
+- Kind of successor to Graphql IDE
+- Accessed by changing an env variable `GATSBY_GRAPHQL_IDE=playground`
+- Better UI
+- **NOTE** Env in this format **doesn't** work in windows 
+  - `"develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop"`
+
+## Filesystem Plugin
+
+- Refer docs for adding [plugin](https://www.gatsbyjs.com/plugins/gatsby-source-filesystem)
+- Update `gatsby-config.js` by dding files to be accssible
+- Test the access using graphql playground (New queries will be available in graphql docs)
+- Graphql query
+
+```qraphql
+query {
+  allFile {
+    edges {
+      node {
+				name
+        extension
+        dir
+      }
+    }
+  }
+}
+```
+
+## Markdown plugin
+
+- Plugin name `gatsby-transformer-remark`
+
+
+## Packages
+
+- `env-cmd` Environemnt in Commandline
