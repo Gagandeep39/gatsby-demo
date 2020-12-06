@@ -16,6 +16,8 @@
 		"edwardhjp.vscode-author-generator",
 		"oderwat.indent-rainbow",
 		"mutantdino.resourcemonitor",
+		"yzhang.markdown-all-in-one",
+		"visualstudioexptteam.vscodeintellicode",
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
