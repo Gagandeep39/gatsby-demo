@@ -8,5 +8,13 @@
 import React from "react"
 
 export default function contact() {
-  return <div>Contacts Page</div>
+  return (
+    <div>
+      <h1>Contact</h1>
+      <p>
+        Reach me via github at{" "}
+        <a href="https://github.com/Gagandeep39">gagandeep39</a>
+      </p>
+    </div>
+  )
 }
