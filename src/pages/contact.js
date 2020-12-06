@@ -7,10 +7,12 @@
  */
 import React from "react"
 import Footer from "../components/footer"
+import Header from "../components/header"
 
 export default function contact() {
   return (
     <div>
+      <Header />
       <h1>Contact</h1>
       <p>
         Reach me via github at{" "}
