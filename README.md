@@ -123,3 +123,19 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 - Visit the [link](https://www.gatsbyjs.com/plugins/) for more info
 - Plugins used in project
   - `gatsby-plugin-sass`
+
+## CSS
+
+### Global CSS
+
+- Import `file-name.css` as `import file-name.css` to any `.js` file, it will be appplied everywhere
+- Apply it using standard method `class='class-name'`
+
+### Scoped CSS
+
+- **Scoped CSS** files can be created using `file-name.module.css`
+- `import anyName from 'file-name.css'` Import a scoped css file
+- Apply it `class={anyName.class-name}`
+- Internally it creates a class name specifically for the component its applied
+- **Always** use Camel case
+  - eg. `nav-list` in `.css` will become `anyName.navList` in `.js`
