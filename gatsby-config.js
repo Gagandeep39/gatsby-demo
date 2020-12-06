@@ -20,7 +20,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
-        path: `${__dirname}/src/posts`,  // Everythig inside src must be accessible
+        path: `${__dirname}/src/posts/`,  // Everythig inside src must be accessible
       },
     },
     `gatsby-plugin-sharp`,
