@@ -160,6 +160,28 @@ query {
   }
 }
 ```
+- Variable based query
+
+```graphql
+query (
+  $slug: String!
+) {
+  markdownRemark (
+    fields: {
+      slug: {
+        eq: $slug
+      }
+    }
+  ) {
+    frontmatter {
+        title
+        date
+      }
+      html
+      excerpt
+  }
+}
+```
 
 ## Graphql Playground
 
