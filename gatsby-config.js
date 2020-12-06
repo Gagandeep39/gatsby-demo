@@ -15,6 +15,13 @@ module.exports = {
     author: 'Gagandeep Singh'
   },
   plugins: [
-    `gatsby-plugin-sass`
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts`,  // Everythig inside src must be accessible
+      },
+    },
   ],
 }
