@@ -6,6 +6,10 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: 'Full-stack Gatsby App',
+    author: 'Gagandeep Singh'
+  },
   plugins: [
     `gatsby-plugin-sass`
   ],
