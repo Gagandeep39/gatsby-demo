@@ -18,3 +18,32 @@ exports.onCreateNode = ({ node, actions }) => {
         })
     }
 }
+
+// Create dynamic routes with as /blog/<mdfile name>
+exports.createPages = async ({ graphql, actions }) => {
+    const { createPage } = actions
+    const blogTemplete = path.resolve('./src/templates/blog.js')
+    const res = await graphql(`
+    query{
+        allMarkdownRemark{
+            edges{
+                node{
+                    fields {
+                        slug
+                    }
+                }
+            }
+        }
+    }
+    `)
+    res.data.allMarkdownRemark.edges.forEach(edge => {
+        createPage({
+            component: blogTemplete,
+            path: `/blog/${edge.node.fields.slug}`,
+            context: {
+                slug: edge.node.fields.slug
+            }
+        })
+    });
+    // Create pages here
+}
