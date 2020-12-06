@@ -198,3 +198,14 @@ query {
 ## Packages
 
 - `env-cmd` Environemnt in Commandline
+
+## TODO
+
+1. Generate a slug for each post (Path for each post)
+2. Generate a blog post template
+
+
+## GraphQL Nodes API
+
+- Structure to store graphql data
+- onCreateNode Allows attaching additioanl data t existing node
