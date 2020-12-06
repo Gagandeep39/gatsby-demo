@@ -20,7 +20,7 @@ jobs:
       - name: Make a production build
         run: |
           npm install
-          npm run build --prod
+          npm run-script build-gh
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v2
         env:
