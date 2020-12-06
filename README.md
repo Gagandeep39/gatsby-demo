@@ -125,6 +125,9 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
   - `gatsby-plugin-sass` Add sass support
   - `gatsby-source-filesystem` Add reading data from filesystem, Docs [link](https://www.gatsbyjs.com/plugins/gatsby-source-filesystem/)
   - `gatsby-transformer-remark` Used to interpret Markdown using Remark
+  - `gatsby-plugin-sharp` Image support, Refer docs at [link](https://www.gatsbyjs.com/plugins/gatsby-plugin-sharp/)
+  - `gatsby-remark-images` Markdown image support, docks [link](https://www.gatsbyjs.com/plugins/gatsby-remark-images/)
+  - `gatsby-remark-relative-images` Position images relatively, docs [link](https://www.gatsbyjs.com/plugins/gatsby-remark-relative-images)
 
 ## CSS
 
@@ -230,4 +233,9 @@ query {
 ## GraphQL Nodes API
 
 - Structure to store graphql data
-- onCreateNode Allows attaching additioanl data t existing node
+- `onCreateNode` Allows attaching additioanl data t existing node
+
+## Images support
+
+- `gatsby-plugin-sharp` plugin eables image processing functionality
+- `gatsby-remark-images` Enables Image support in markdown
