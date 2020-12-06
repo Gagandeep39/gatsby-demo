@@ -18,6 +18,7 @@
 		"mutantdino.resourcemonitor",
 		"yzhang.markdown-all-in-one",
 		"visualstudioexptteam.vscodeintellicode",
+		"dsznajder.es7-react-js-snippets",
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
