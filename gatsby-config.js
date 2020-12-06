@@ -6,6 +6,10 @@
 
 module.exports = {
   /* Your site config here */
+  // Fixes routing in gh-pages
+  // pathPrefix: "/reponame",
+  pathPrefix: "/gatsby-demo",
+  // Meta data to be accssed by graphql
   siteMetadata: {
     title: 'Full-stack Gatsby App',
     author: 'Gagandeep Singh'
