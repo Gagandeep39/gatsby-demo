@@ -6,13 +6,12 @@
  * @desc Blog Page
  */
 import React from "react"
-import Header from "../components/header"
+import Layout from "../components/layout"
 
 export default function blog() {
   return (
-    <div>
-      <Header />
+    <Layout>
       <h1>Blog Page</h1>
-    </div>
+    </Layout>
   )
 }

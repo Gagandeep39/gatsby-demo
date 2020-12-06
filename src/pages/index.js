@@ -1,11 +1,17 @@
+/**
+ * @author Gagandeep Singh
+ * @email singh.gagandeep3911@gmail.com
+ * @create date 2020-12-06 09:27:00
+ * @modify date 2020-12-06 09:27:00
+ * @desc Home Page
+ */
 import React from "react"
 import { Link } from "gatsby"
-import Header from "../components/header"
+import Layout from "../components/layout"
 
 const index = () => {
   return (
-    <div>
-      <Header />
+    <Layout>
       <h1>Hi! I am a full stack developer</h1>
       <p>
         <Link to="/contact">Contact Us</Link>
@@ -13,7 +19,7 @@ const index = () => {
       <p>
         <Link to="/about">About Us</Link>
       </p>
-    </div>
+    </Layout>
   )
 }
 
