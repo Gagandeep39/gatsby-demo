@@ -1,5 +1,5 @@
 {
-	"name": "Node.js Alpine",
+	"name": "Node.js 14 LTS",
 	"build": {
 		"dockerfile": "Dockerfile",
 	},

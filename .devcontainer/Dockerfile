@@ -1,14 +1,14 @@
-FROM node:14-alpine
+FROM node:14.15.1
 ##############################################################
 ################        Installing Packages     ##############
 ##############################################################
-RUN apk add git && apk add zsh
-RUN npm install -g gatsby-cli
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get -y install --no-install-recommends zsh
+RUN npm install -g gatsby
 ##############################################################
 ################            Create User        ###############
 ##############################################################
-# Comment below code and rebuild t fix permission issue
-# RUN addgroup -S appgroup && adduser -S gagan -G appgroup
+# Uncomment it in dev container
 USER node
 ##############################################################
 ################            ZSH Config        ################
