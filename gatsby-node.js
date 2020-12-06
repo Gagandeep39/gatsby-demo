@@ -9,8 +9,6 @@ exports.onCreateNode = ({ node, actions }) => {
     // console.log(JSON.stringify(node, undefined, 4));
     if (node.internal.type === 'MarkdownRemark') {
         const slug = path.basename(node.fileAbsolutePath, '.md')
-        console.log('---------------------');
-        console.log(slug);
         createNodeField({
             node,
             name: 'slug',
@@ -45,5 +43,4 @@ exports.createPages = async ({ graphql, actions }) => {
             }
         })
     });
-    // Create pages here
 }
