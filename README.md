@@ -163,25 +163,18 @@ query {
   }
 }
 ```
+
 - Variable based query
 
 ```graphql
-query (
-  $slug: String!
-) {
-  markdownRemark (
-    fields: {
-      slug: {
-        eq: $slug
-      }
-    }
-  ) {
+query($slug: String!) {
+  markdownRemark(fields: { slug: { eq: $slug } }) {
     frontmatter {
-        title
-        date
-      }
-      html
-      excerpt
+      title
+      date
+    }
+    html
+    excerpt
   }
 }
 ```
@@ -191,7 +184,7 @@ query (
 - Kind of successor to Graphql IDE
 - Accessed by changing an env variable `GATSBY_GRAPHQL_IDE=playground`
 - Better UI
-- **NOTE** Env in this format **doesn't** work in windows 
+- **NOTE** Env in this format **doesn't** work in windows
   - `"develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop"`
 
 ## Filesystem Plugin
@@ -219,7 +212,6 @@ query {
 
 - Plugin name `gatsby-transformer-remark`
 
-
 ## Packages
 
 - `env-cmd` Environemnt in Commandline
@@ -228,7 +220,6 @@ query {
 
 1. Generate a slug for each post (Path for each post)
 2. Generate a blog post template
-
 
 ## GraphQL Nodes API
 
@@ -239,3 +230,25 @@ query {
 
 - `gatsby-plugin-sharp` plugin eables image processing functionality
 - `gatsby-remark-images` Enables Image support in markdown
+- Snippet to add image support in markdown
+
+```graphql
+`gatsby-plugin-sharp`,
+{
+  resolve: `gatsby-transformer-remark`,
+  options: {
+    plugins: [
+      `gatsby-remark-relative-images`,
+      {
+        resolve: `gatsby-remark-images`,
+        options: {
+          maxWidth: 730,
+        },
+      },
+    ],
+  },
+},
+```
+
+- Transformer plugin requires additional config
+- Relative image is a plugin for markdown plugin (transfer remark plugin)
