@@ -102,3 +102,24 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 1. Create a new folder
 2. Run gatsby new `../<folder_name>`
+
+## Pages
+
+- Index.js is the starting point of application
+
+## Routing
+
+- Create a file inside `src/pages`
+- Append the page name in browser to access it
+
+## Styling
+
+- Create a folder `src/styles`
+- Create a file `index.css`
+- import it wherever we have to use css `import '../styles/index.css'`
+
+## Plugins
+
+- Visit the [link](https://www.gatsbyjs.com/plugins/) for more info
+- Plugins used in project
+  - `gatsby-plugin-sass`
