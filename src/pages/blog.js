@@ -31,7 +31,7 @@ const Blog = () => {
   const fetchAllData = () => {
     return <ol>
       {blogPosts.allMarkdownRemark.edges.map(edge => (
-        <li>
+        <li key={edge.node.frontmatter.title}>
           <h2> {edge.node.frontmatter.title} </h2>
           <h2> {edge.node.frontmatter.date} </h2>
         </li>
