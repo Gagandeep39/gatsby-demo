@@ -6,6 +6,7 @@
  * @desc About page
  */
 import React from "react"
+import Footer from "../components/footer"
 
 export default function about() {
   return (
@@ -14,6 +15,7 @@ export default function about() {
       <p>
         I am Gagandeep Singh <br />I am a Full stack Web Developer
       </p>
+      <Footer />
     </div>
   )
 }

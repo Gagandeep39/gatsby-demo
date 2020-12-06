@@ -6,6 +6,7 @@
  * @desc Contact page
  */
 import React from "react"
+import Footer from "../components/footer"
 
 export default function contact() {
   return (
@@ -15,6 +16,7 @@ export default function contact() {
         Reach me via github at{" "}
         <a href="https://github.com/Gagandeep39">gagandeep39</a>
       </p>
+      <Footer />
     </div>
   )
 }
