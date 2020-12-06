@@ -7,7 +7,7 @@
  */
 import React from "react"
 import Layout from "../components/layout"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 
 const Blog = () => {
 
@@ -22,6 +22,9 @@ const Blog = () => {
             }
             html
             excerpt
+            fields {
+              slug
+            }
           }
         }
       }
@@ -32,7 +35,7 @@ const Blog = () => {
     return <ol>
       {blogPosts.allMarkdownRemark.edges.map(edge => (
         <li key={edge.node.frontmatter.title}>
-          <h2> {edge.node.frontmatter.title} </h2>
+          <h2> <Link to={`/blog/${edge.node.fields.slug}`}>{edge.node.frontmatter.title}</Link> </h2>
           <h2> {edge.node.frontmatter.date} </h2>
         </li>
       ))}

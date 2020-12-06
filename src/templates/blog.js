@@ -11,7 +11,7 @@ import Layout from '../components/layout'
 const Blog = () => {
     return (
         <Layout>
-
+            Markdown Content
         </Layout>
     )
 }
