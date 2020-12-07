@@ -15,18 +15,13 @@ export const query = graphql`
 query (
     $slug: String!
 ) {
-    markdownRemark (
-        fields: {
+    contentfulBlogPost (
         slug: {
             eq: $slug
         }
-    }
     ) {
-        frontmatter {
-            title
-            date
-        }
-        html
+        title
+        publishedDate (formatString: "MMMM Do, YYYY")
     }
 }
 `
@@ -34,11 +29,8 @@ query (
 const Blog = (props) => {
     return (
         <Layout>
-            <h1> {props.data.markdownRemark.frontmatter.title} </h1>
-            <p> {props.data.markdownRemark.frontmatter.date} </p>
-            <hr />
-            {/* Render HTML */}
-            <div dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}></div>
+            <h1> {props.data.contentfulBlogPost.title} </h1>
+            <p> {props.data.contentfulBlogPost.publishedDate} </p>
         </Layout>
     )
 }
