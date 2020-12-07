@@ -13,7 +13,7 @@ import Head from "../components/head"
 const index = () => {
   return (
     <Layout>
-      <Head />
+      <Head title='Home' />
       <h1>Hi! I am a full stack developer</h1>
       <p>
         <Link to="/contact">Contact Us</Link>

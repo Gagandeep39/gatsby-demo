@@ -5,12 +5,23 @@
  * @modify date 2020-12-07 07:32:39
  * @desc Head
  */
+import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-const Head = () => {
+const Head = ({title}) => {
+    const data = useStaticQuery(graphql`
+        query {
+            site {
+                siteMetadata {
+                    title
+                }
+            }
+        }
+    `)
+
     return (
-        <Helmet title='This is document tile' />
+        <Helmet title={`${title} | ${data.site.siteMetadata.title}`} />
     )
 }
 
