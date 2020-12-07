@@ -28,6 +28,10 @@
   - [TODO](#todo)
   - [GraphQL Nodes API](#graphql-nodes-api)
   - [Images support](#images-support)
+  - [Contentful (Online CMS)](#contentful-online-cms)
+    - [Tasks to do on website](#tasks-to-do-on-website)
+    - [Create api token](#create-api-token)
+    - [Client Implementation](#client-implementation)
 
 ## Deployment
 
@@ -63,6 +67,7 @@
   - `gatsby-plugin-sharp` Image support, Refer docs at [link](https://www.gatsbyjs.com/plugins/gatsby-plugin-sharp/)
   - `gatsby-remark-images` Markdown image support, docks [link](https://www.gatsbyjs.com/plugins/gatsby-remark-images/)
   - `gatsby-remark-relative-images` Position images relatively, docs [link](https://www.gatsbyjs.com/plugins/gatsby-remark-relative-images)
+  - `gatsby-source-contentful` Connect to contentful site
 
 ## CSS
 
@@ -187,3 +192,37 @@ query {
 
 - Transformer plugin requires additional config
 - Relative image is a plugin for markdown plugin (transfer remark plugin)
+
+## Contentful (Online CMS)
+
+### Tasks to do on website
+
+- Link: https://app.contentful.com/
+- Used to create content
+- Steps To Create CMS
+  1. Create account -> Get Started -> Try for free -> Create Wkspace
+  2. Content Model -> Add content type -> Enter `Blog Post`
+  3. Add fiels 
+     1. Title - Text
+     2. Slug - Text
+     3. Published Date - Date
+     4. Body - Rich text
+  4. Save
+- Steos to add Content
+  1. Content -> Add entry 
+  2. Enter all fields
+  3. Save
+
+### Create api token
+
+1. Settings
+2. API Key
+3. Add API key
+4. Fill name and description
+   1. Copy `Space ID`
+   2. Copy `Content Delivery API - access token`
+
+### Client Implementation
+
+1. Add plugin `gatsby-source-contentful`
+2. Ad below snippet in `gatsby-config.js`
