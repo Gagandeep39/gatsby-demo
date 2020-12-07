@@ -7,10 +7,12 @@
  */
 import React from "react"
 import Layout from "../components/layout"
+import Head from "../components/head"
 
 export default function contact() {
   return (
     <Layout>
+    <Head title='Contact Us' />
       <h1>Contact</h1>
       <p>
         Reach me via github at{" "}
