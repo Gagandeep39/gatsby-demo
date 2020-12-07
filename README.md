@@ -34,6 +34,10 @@
     - [Client Implementation](#client-implementation)
   - [404](#404)
   - [React Helmet](#react-helmet)
+  - [Deployment](#deployment-1)
+    - [GH-Pages](#gh-pages)
+    - [Netlify](#netlify)
+  - [Locally Run the app](#locally-run-the-app)
 
 ## Deployment
 
@@ -205,14 +209,14 @@ query {
 - Steps To Create CMS
   1. Create account -> Get Started -> Try for free -> Create Wkspace
   2. Content Model -> Add content type -> Enter `Blog Post`
-  3. Add fiels 
+  3. Add fiels
      1. Title - Text
      2. Slug - Text
      3. Published Date - Date
      4. Body - Rich text
   4. Save
 - Steos to add Content
-  1. Content -> Add entry 
+  1. Content -> Add entry
   2. Enter all fields
   3. Save
 
@@ -240,24 +244,19 @@ query {
     },
    ```
 3. Fetch data aas json from server
-4. Add query to fetch render json in marldown in Templates stored in `template` 
+4. Add query to fetch render json in marldown in Templates stored in `template`
+
 ```js
 export const query = graphql`
-query (
-    $slug: String!
-) {
-    contentfulBlogPost (
-        slug: {
-            eq: $slug
-        }
-    ) {
-        title
-        publishedDate (formatString: "MMMM Do, YYYY")
-        body {
-            json
-        }
+  query($slug: String!) {
+    contentfulBlogPost(slug: { eq: $slug }) {
+      title
+      publishedDate(formatString: "MMMM Do, YYYY")
+      body {
+        json
+      }
     }
-}
+  }
 `
 ```
 
@@ -269,10 +268,13 @@ query (
   ```js
   const NotFound = () => {
     return (
-        <Layout>
-            <h1>Page not found</h1>
-            <p> <Link to='/'> Head Home </Link> </p>
-        </Layout>
+      <Layout>
+        <h1>Page not found</h1>
+        <p>
+          {" "}
+          <Link to="/"> Head Home </Link>{" "}
+        </p>
+      </Layout>
     )
   }
   ```
@@ -285,3 +287,34 @@ query (
 - Basically modify the content specified in index.html
 - Mostly to maipulate title in browser
 - Usage -> Copy the line in your Layout to update title `<Helmet title='Home' />`
+
+## Deployment
+
+### GH-Pages
+
+- Refer `.github/workflows/deploy-ghpage.yml` for the same
+
+### Netlify
+
+1. Go to www.netlify.com
+2. Register
+3. Authorize Github
+4. Select Repository
+5. Select Branch
+6. Select Build command as `gatsby build`
+7. Set publish directory as `public/`
+8. Specify the Envionment variable for Contentful Token i.e `CONTENTFUL_ACCESS_TOKEN`
+9. Click `Deploy Site`
+10. Find the URL of site in `Site Overview` Section in Top Navbar
+
+## Locally Run the app
+
+1. Clone the repository
+2. Run `npm install`
+3. Create an .env file in root of the project with below keys
+   ```env
+   GATSBY_GRAPHQL_IDE=playground
+   CONTENTFUL_ACCESS_TOKEN=
+   ```
+4. `npm start`
+5. Go to `http://localhost:8000`
