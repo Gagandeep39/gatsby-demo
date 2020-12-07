@@ -33,6 +33,7 @@
     - [Create api token](#create-api-token)
     - [Client Implementation](#client-implementation)
   - [404](#404)
+  - [React Helmet](#react-helmet)
 
 ## Deployment
 
@@ -69,6 +70,7 @@
   - `gatsby-remark-images` Markdown image support, docks [link](https://www.gatsbyjs.com/plugins/gatsby-remark-images/)
   - `gatsby-remark-relative-images` Position images relatively, docs [link](https://www.gatsbyjs.com/plugins/gatsby-remark-relative-images)
   - `gatsby-source-contentful` Connect to contentful site
+  - `gatsby-plugin-react-helmet`, Docs [link](https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet)
 
 ## CSS
 
@@ -275,3 +277,11 @@ query (
   }
   ```
 - Accessed by entering url as `/<anything>`
+
+## React Helmet
+
+- Plugin, `gatsby-plugin-react-helmet`, `react-helmet`
+- Control your document head using their React component.
+- Basically modify the content specified in index.html
+- Mostly to maipulate title in browser
+- Usage -> Copy the line in your Layout to update title `<Helmet title='Home' />`
