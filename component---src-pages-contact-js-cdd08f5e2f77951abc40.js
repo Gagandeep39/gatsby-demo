@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{"Cuy+":function(e,t,a){"use strict";a.r(t),a.d(t,"default",(function(){return r}));var n=a("q1tI"),c=a.n(n),l=a("Bl7J"),u=a("hIod");function r(){return c.a.createElement(l.a,null,c.a.createElement(u.a,{title:"Contact Us"}),c.a.createElement("h1",null,"Contact"),c.a.createElement("p",null,"Reach me via github at"," ",c.a.createElement("a",{href:"https://github.com/Gagandeep39"},"gagandeep39")))}}}]);
+//# sourceMappingURL=component---src-pages-contact-js-cdd08f5e2f77951abc40.js.map
