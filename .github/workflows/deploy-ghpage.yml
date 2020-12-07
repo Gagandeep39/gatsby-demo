@@ -21,6 +21,8 @@ jobs:
         run: |
           npm install
           npm run-script build-gh
+        env:
+          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v2
         env:
