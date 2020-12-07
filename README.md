@@ -32,6 +32,7 @@
     - [Tasks to do on website](#tasks-to-do-on-website)
     - [Create api token](#create-api-token)
     - [Client Implementation](#client-implementation)
+  - [404](#404)
 
 ## Deployment
 
@@ -257,3 +258,20 @@ query (
 }
 `
 ```
+
+## 404
+
+- Page shown when we enter an invalid page
+- Must be created in `pages/404.js`
+- Snippet
+  ```js
+  const NotFound = () => {
+    return (
+        <Layout>
+            <h1>Page not found</h1>
+            <p> <Link to='/'> Head Home </Link> </p>
+        </Layout>
+    )
+  }
+  ```
+- Accessed by entering url as `/<anything>`
