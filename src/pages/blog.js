@@ -13,7 +13,7 @@ import blogStyles from './blog.module.scss'
 const Blog = () => {
   const blogPosts = useStaticQuery(graphql`
     query {
-      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
+      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }, filter: { node_locale: { eq: "en-US" } }) {
         edges {
           node {
             title
