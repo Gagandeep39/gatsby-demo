@@ -224,5 +224,36 @@ query {
 
 ### Client Implementation
 
-1. Add plugin `gatsby-source-contentful`
+1. Add plugin `gatsby-source-contentful`, package`@contentful/rich-text-react-renderer` for converting json to markdown
 2. Ad below snippet in `gatsby-config.js`
+   ```js
+   {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `dann6e6efegd`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
+   ```
+3. Fetch data aas json from server
+4. Add query to fetch render json in marldown in Templates stored in `template` 
+```js
+export const query = graphql`
+query (
+    $slug: String!
+) {
+    contentfulBlogPost (
+        slug: {
+            eq: $slug
+        }
+    ) {
+        title
+        publishedDate (formatString: "MMMM Do, YYYY")
+        body {
+            json
+        }
+    }
+}
+`
+```
