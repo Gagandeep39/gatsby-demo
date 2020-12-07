@@ -8,10 +8,12 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
+import Head from "../components/head"
 
 const index = () => {
   return (
     <Layout>
+      <Head />
       <h1>Hi! I am a full stack developer</h1>
       <p>
         <Link to="/contact">Contact Us</Link>
